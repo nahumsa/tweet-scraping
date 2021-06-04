@@ -14,4 +14,5 @@ def scrape_tweets(username: str, n_tweets: int) -> pd.DataFrame:
     return twint.storage.panda.Tweets_df
     
 
-scrape_tweets("sa_nahum", 10).to_csv("nahum.csv")
+if __name__ == "__main__":
+    scrape_tweets("sa_nahum", 10).to_csv("nahum.csv")
