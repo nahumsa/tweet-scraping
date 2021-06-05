@@ -1,2 +1,6 @@
 tweet-env/
 *.csv
+.nox/
+__pycache__/
+.pytest_cache/
+.coverage
