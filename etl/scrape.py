@@ -8,6 +8,7 @@ def scrape_tweets(username: str, n_tweets: int) -> pd.DataFrame:
     c.Limit = n_tweets
     c.Username = username
     c.Pandas = True
+    c.Hide_output = True
 
     twint.run.Search(c)
 
