@@ -17,3 +17,5 @@ As a final step, I will store the data to be available for analysis. For this I 
 # 4) Automation
 
 A good way to keep the data flowing to the database is good to have a tool that can automate this procedure. The tool that I will use is [Apache Airflow](https://airflow.apache.org/). The reason that I chose Airflow is because it is an open-source project and is used by many data companies.
+
+![data chart](img/data_chart.png)
