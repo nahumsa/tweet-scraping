@@ -17,11 +17,14 @@ def clean_df(path: str, keep_columns:list) -> pd.DataFrame:
     df = pd.read_csv(path)
     tweet_df = df[keep_columns]
 
-    if "date" in tweet_df.columns:
-        return convert_time(tweet_df)
+    if "date" not in tweet_df.columns:
+        raise ValueError("The dataframe doesn't have a date column.")
+    
+    elif "timezone" not in tweet_df.columns:
+        raise ValueError("The dataframe doesn't have a timezone column.")
     
     else:
-        raise ValueError("The dataframe doesn't have a date.")
+        return convert_time(tweet_df)
 
 
  

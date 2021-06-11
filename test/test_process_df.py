@@ -28,7 +28,16 @@ class TestCleanDF(unittest.TestCase):
             df.to_csv("mock.csv", index=False)
             
             clean_df("mock.csv", ['col1'])
+    
+    def test_check_no_timezone(self):
+        with self.assertRaises(ValueError):
+            d = {'date': [1, 2], 'col2': [3, 4]}
+            df = pd.DataFrame(data=d)
             
+            df.to_csv("mock.csv", index=False)
+            
+            clean_df("mock.csv", ['date'])
+
     def tearDown(self):
         if "mock.csv" in os.listdir():
             os.remove("mock.csv")
