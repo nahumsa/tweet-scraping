@@ -18,3 +18,7 @@ class TestScrape(unittest.TestCase):
     def test_data_save(self):
         self.scrape_obj.save_csv(self.save_path)
         self.assertIn(self.save_path, os.listdir())
+
+    def tearDown(self):
+        if self.save_path in os.listdir():
+            os.remove(self.save_path)
