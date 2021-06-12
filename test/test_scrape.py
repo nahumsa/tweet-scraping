@@ -11,6 +11,7 @@ class TestScrape(unittest.TestCase):
     
     def test_check_df_columns(self):
         df_scrape = self.scrape_obj.df
+        self.assertIn("id", df_scrape.columns)
         self.assertIn("tweet", df_scrape.columns)
         self.assertIn("date", df_scrape.columns)
         self.assertIn("timezone", df_scrape.columns)

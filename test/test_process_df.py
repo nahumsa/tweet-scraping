@@ -37,7 +37,7 @@ class TestCleanDF(unittest.TestCase):
             df.to_csv("mock.csv", index=False)
             
             clean_df("mock.csv", ['date'])
-
+    
     def tearDown(self):
         if "mock.csv" in os.listdir():
             os.remove("mock.csv")

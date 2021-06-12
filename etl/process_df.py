@@ -50,8 +50,3 @@ def convert_time(df: pd.DataFrame) -> pd.DataFrame:
     df = df.drop("timezone", axis=1)
 
     return df
-
-if __name__ == "__main__":
-    keep_columns = ["id", "date", "timezone", "tweet", "language"]
-    print(pd.read_csv("nahum.csv"))
-    print(clean_df("nahum.csv", keep_columns))
