@@ -1,20 +1,21 @@
 import twint
 import pandas as pd
+import datetime
 
 
 class scrapeTweets():
 
-    def __init__(self, username: str, n_tweets: int) -> None:
-        self._tweet_df = self._scrape(username, n_tweets)
+    def __init__(self, keyword: str) -> None:
+        self._tweet_df = self._scrape(keyword)
 
     @property
     def df(self):
         return self._tweet_df
 
-    def _scrape(self, username: str, n_tweets: int) -> pd.DataFrame:
+    def _scrape(self, keyword: str) -> pd.DataFrame:
         c = twint.Config()
-        c.Limit = n_tweets
-        c.Username = username
+        c.Search = keyword
+        c.Since = str(datetime.datetime.now() - datetime.timedelta(hours=1))[:19]
         c.Pandas = True
         c.Hide_output = True
 
