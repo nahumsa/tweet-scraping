@@ -6,8 +6,8 @@ from etl.scrape import scrapeTweets
 class TestScrape(unittest.TestCase):
 
     def setUp(self):
-        self.scrape_obj = scrapeTweets("sa_nahum", 10)
-        self.save_path = "n.csv"
+        self.scrape_obj = scrapeTweets("CPI")
+        self.save_path = "cpi.csv"
     
     def test_check_df_columns(self):
         df_scrape = self.scrape_obj.df
