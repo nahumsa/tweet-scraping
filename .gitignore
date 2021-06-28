@@ -1,4 +1,5 @@
 tweet-env/
+tweet-env-clean/
 *.csv
 .nox/
 __pycache__/
