@@ -1,9 +1,9 @@
 import psycopg2
 
 from datetime import datetime
-from etl.scrape import scrapeTweets
-from etl.process_df import clean_df
-from etl.database import create_table, add_df_to_sql
+from dags.etl.scrape import scrapeTweets
+from dags.etl.process_df import clean_df
+from dags.etl.database import create_table, add_df_to_sql
 from sqlalchemy import create_engine
 
 scrape_time = datetime.now().isoformat()
